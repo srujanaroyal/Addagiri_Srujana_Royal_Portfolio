@@ -1,0 +1,969 @@
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 88px;
+
+  z-index: 1000;
+
+  background: rgba(7, 16, 20, 0.72);
+
+  border-bottom: 1px solid transparent;
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  transition:
+    height 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* =========================================================
+   SCROLLED NAVBAR
+========================================================= */
+
+.navbar-scrolled {
+  height: 76px;
+
+  background: rgba(7, 16, 20, 0.94);
+
+  border-bottom-color: var(--line);
+
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.navbar-container {
+  width: min(1380px, 94%);
+
+  height: 100%;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    190px
+    minmax(0, 1fr)
+    190px;
+
+  align-items: center;
+
+  column-gap: 25px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.navbar-logo {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-self: start;
+
+  gap: 11px;
+
+  text-decoration: none;
+
+  color: var(--text-primary);
+
+  white-space: nowrap;
+}
+
+
+.navbar-logo-mark {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border: 1px solid var(--line-strong);
+
+  background: rgba(101, 230, 209, 0.04);
+
+  color: var(--accent);
+
+  font-family: var(--font-mono);
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.05em;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.navbar-logo-name {
+  font-family: var(--font-mono);
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.16em;
+
+  color: var(--text-primary);
+
+  transition: color 0.25s ease;
+}
+
+
+.navbar-logo:hover .navbar-logo-mark {
+  background: rgba(101, 230, 209, 0.1);
+
+  border-color: var(--accent);
+
+  transform: translateY(-1px);
+}
+
+
+.navbar-logo:hover .navbar-logo-name {
+  color: var(--accent);
+}
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
+
+.navbar-links {
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: clamp(8px, 1.2vw, 22px);
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   NAV LINK
+========================================================= */
+
+.navbar-link {
+  position: relative;
+
+  height: 100%;
+
+  min-width: 72px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 0 6px;
+
+  color: var(--text-muted);
+
+  text-decoration: none;
+
+  font-family: var(--font-mono);
+
+  transition:
+    color 0.25s ease;
+}
+
+
+/* =========================================================
+   LINK NUMBER
+========================================================= */
+
+.navbar-link-number {
+  font-size: 7px;
+
+  line-height: 1;
+
+  letter-spacing: 0.08em;
+
+  color: var(--text-muted);
+
+  opacity: 0.7;
+
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+
+/* =========================================================
+   LINK NAME
+========================================================= */
+
+.navbar-link-name {
+  position: relative;
+
+  font-size: 12px;
+
+  line-height: 1;
+
+  font-weight: 500;
+
+  letter-spacing: 0.045em;
+
+  white-space: nowrap;
+
+  color: var(--text-secondary);
+
+  transition:
+    color 0.25s ease;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.navbar-link:hover {
+  color: var(--accent);
+}
+
+
+.navbar-link:hover .navbar-link-number {
+  color: var(--accent);
+
+  opacity: 1;
+}
+
+
+.navbar-link:hover .navbar-link-name {
+  color: var(--text-primary);
+}
+
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.navbar-link.active .navbar-link-number {
+  color: var(--accent);
+
+  opacity: 1;
+}
+
+
+.navbar-link.active .navbar-link-name {
+  color: var(--accent);
+}
+
+
+/* =========================================================
+   ACTIVE LINE
+========================================================= */
+
+.navbar-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 15px;
+
+  width: 0;
+  height: 1px;
+
+  background: var(--accent);
+
+  transform: translateX(-50%);
+
+  transition:
+    width 0.3s ease;
+}
+
+
+.navbar-link.active::after {
+  width: 22px;
+}
+
+
+.navbar-link:hover::after {
+  width: 14px;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.navbar-status {
+  justify-self: end;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding-left: 20px;
+
+  font-family: var(--font-mono);
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.13em;
+
+  color: var(--text-muted);
+
+  white-space: nowrap;
+}
+
+
+.navbar-status-dot {
+  width: 6px;
+  height: 6px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  box-shadow:
+    0 0 10px rgba(101, 230, 209, 0.75);
+
+  animation:
+    navbarPulse 2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   STATUS ANIMATION
+========================================================= */
+
+@keyframes navbarPulse {
+
+  0%,
+  100% {
+    opacity: 0.5;
+
+    transform: scale(0.85);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: scale(1.15);
+  }
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.navbar-menu-button {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  position: relative;
+
+  padding: 0;
+
+  border: 1px solid var(--line);
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+
+.navbar-menu-button span {
+  position: absolute;
+
+  left: 50%;
+
+  width: 18px;
+  height: 1px;
+
+  background: var(--text-primary);
+
+  transform: translateX(-50%);
+
+  transition:
+    transform 0.3s ease,
+    top 0.3s ease;
+}
+
+
+.navbar-menu-button span:first-child {
+  top: 16px;
+}
+
+
+.navbar-menu-button span:last-child {
+  top: 24px;
+}
+
+
+/* =========================================================
+   MENU OPEN
+========================================================= */
+
+.navbar-menu-button.active span:first-child {
+  top: 20px;
+
+  transform:
+    translateX(-50%)
+    rotate(45deg);
+}
+
+
+.navbar-menu-button.active span:last-child {
+  top: 20px;
+
+  transform:
+    translateX(-50%)
+    rotate(-45deg);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.navbar-mobile {
+  display: none;
+}
+
+
+/* =========================================================
+   1250px
+========================================================= */
+
+@media (max-width: 1250px) {
+
+  .navbar-container {
+    grid-template-columns:
+      165px
+      minmax(0, 1fr)
+      150px;
+
+    column-gap: 15px;
+  }
+
+
+  .navbar-links {
+    gap: 5px;
+  }
+
+
+  .navbar-link {
+    min-width: 66px;
+
+    padding: 0 4px;
+  }
+
+
+  .navbar-link-name {
+    font-size: 11px;
+  }
+
+
+  .navbar-logo-name {
+    font-size: 13px;
+  }
+
+
+  .navbar-status {
+    padding-left: 10px;
+
+    font-size: 8px;
+  }
+
+}
+
+
+/* =========================================================
+   1100px
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .navbar-container {
+    grid-template-columns:
+      145px
+      minmax(0, 1fr)
+      125px;
+
+    width: 95%;
+  }
+
+
+  .navbar-links {
+    gap: 2px;
+  }
+
+
+  .navbar-link {
+    min-width: 58px;
+
+    padding: 0 3px;
+  }
+
+
+  .navbar-link-name {
+    font-size: 10px;
+
+    letter-spacing: 0.025em;
+  }
+
+
+  .navbar-link-number {
+    font-size: 6px;
+  }
+
+
+  .navbar-status {
+    gap: 6px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.1em;
+  }
+
+}
+
+
+/* =========================================================
+   950px
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .navbar {
+    height: 78px;
+  }
+
+
+  .navbar-scrolled {
+    height: 70px;
+  }
+
+
+  .navbar-container {
+    display: flex;
+
+    justify-content: space-between;
+
+    width: min(92%, 900px);
+
+    column-gap: 0;
+  }
+
+
+  /* Hide desktop navigation */
+
+  .navbar-links {
+    display: none;
+  }
+
+
+  /* Hide desktop status */
+
+  .navbar-status {
+    display: none;
+  }
+
+
+  /* Show menu */
+
+  .navbar-menu-button {
+    display: block;
+  }
+
+
+  /* =====================================================
+     MOBILE PANEL
+  ===================================================== */
+
+  .navbar-mobile {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: block;
+
+    background:
+      radial-gradient(
+        circle at 80% 20%,
+        rgba(101, 230, 209, 0.07),
+        transparent 35%
+      ),
+      var(--bg-main);
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    transform: translateY(-20px);
+
+    pointer-events: none;
+
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease,
+      visibility 0.35s ease;
+  }
+
+
+  .navbar-mobile.open {
+    visibility: visible;
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+  }
+
+
+  .navbar-mobile-inner {
+    width: min(92%, 900px);
+
+    height: 100%;
+
+    margin: 0 auto;
+
+    padding:
+      120px 0 35px;
+
+    display: flex;
+
+    flex-direction: column;
+  }
+
+
+  /* =====================================================
+     MOBILE HEADING
+  ===================================================== */
+
+  .navbar-mobile-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid var(--line);
+
+    font-family: var(--font-mono);
+
+    font-size: 9px;
+
+    letter-spacing: 0.15em;
+
+    color: var(--text-muted);
+  }
+
+
+  .navbar-mobile-heading span:last-child {
+    color: var(--accent);
+  }
+
+
+  /* =====================================================
+     MOBILE LINKS
+  ===================================================== */
+
+  .navbar-mobile-links {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-top: 10px;
+  }
+
+
+  .navbar-mobile-link {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 45px 1fr 30px;
+
+    align-items: center;
+
+    min-height: 70px;
+
+    padding: 0 5px;
+
+    border-bottom: 1px solid var(--line);
+
+    color: var(--text-secondary);
+
+    text-decoration: none;
+
+    transition:
+      color 0.25s ease,
+      padding-left 0.25s ease,
+      background 0.25s ease;
+  }
+
+
+  .navbar-mobile-number {
+    font-family: var(--font-mono);
+
+    font-size: 9px;
+
+    color: var(--text-muted);
+  }
+
+
+  .navbar-mobile-name {
+    font-family: var(--font-main);
+
+    font-size: 22px;
+
+    font-weight: 500;
+
+    letter-spacing: -0.02em;
+  }
+
+
+  .navbar-mobile-arrow {
+    justify-self: end;
+
+    font-size: 17px;
+
+    color: var(--text-muted);
+
+    transition:
+      color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+
+  .navbar-mobile-link:hover,
+  .navbar-mobile-link.active {
+    color: var(--accent);
+
+    padding-left: 12px;
+
+    background: rgba(101, 230, 209, 0.035);
+  }
+
+
+  .navbar-mobile-link:hover
+  .navbar-mobile-number,
+  .navbar-mobile-link.active
+  .navbar-mobile-number {
+    color: var(--accent);
+  }
+
+
+  .navbar-mobile-link:hover
+  .navbar-mobile-arrow,
+  .navbar-mobile-link.active
+  .navbar-mobile-arrow {
+    color: var(--accent);
+
+    transform:
+      translate(3px, -3px);
+  }
+
+
+  /* =====================================================
+     MOBILE FOOTER
+  ===================================================== */
+
+  .navbar-mobile-footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    margin-top: auto;
+
+    padding-top: 25px;
+
+    border-top: 1px solid var(--line);
+
+    font-family: var(--font-mono);
+
+    font-size: 8px;
+
+    letter-spacing: 0.1em;
+
+    line-height: 1.5;
+
+    color: var(--text-muted);
+  }
+
+
+  .navbar-mobile-footer span:last-child {
+    color: var(--accent);
+
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================================================
+   600px
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .navbar-container {
+    width: 90%;
+  }
+
+
+  .navbar-logo-mark {
+    width: 35px;
+    height: 35px;
+
+    font-size: 10px;
+  }
+
+
+  .navbar-logo-name {
+    font-size: 12px;
+
+    letter-spacing: 0.13em;
+  }
+
+
+  .navbar-menu-button {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .navbar-mobile-inner {
+    width: 90%;
+
+    padding-top: 105px;
+  }
+
+
+  .navbar-mobile-link {
+    min-height: 64px;
+  }
+
+
+  .navbar-mobile-name {
+    font-size: 20px;
+  }
+
+}
+
+
+/* =========================================================
+   480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .navbar {
+    height: 72px;
+  }
+
+
+  .navbar-scrolled {
+    height: 66px;
+  }
+
+
+  .navbar-logo-name {
+    font-size: 11px;
+  }
+
+
+  .navbar-mobile-inner {
+    padding-top: 95px;
+  }
+
+
+  .navbar-mobile-link {
+    grid-template-columns:
+      35px 1fr 25px;
+
+    min-height: 60px;
+  }
+
+
+  .navbar-mobile-name {
+    font-size: 18px;
+  }
+
+
+  .navbar-mobile-footer {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .navbar,
+  .navbar-link,
+  .navbar-link::after,
+  .navbar-mobile,
+  .navbar-mobile-link,
+  .navbar-mobile-arrow,
+  .navbar-logo-mark {
+    transition: none;
+  }
+
+
+  .navbar-status-dot {
+    animation: none;
+  }
+
+}

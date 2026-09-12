@@ -1,0 +1,1066 @@
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
+
+.about {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: var(--section-padding) 0 120px;
+
+  background: var(--bg-main);
+
+  color: var(--text-primary);
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.about-background {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -2;
+
+  pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   GRID
+--------------------------------------------------------- */
+
+.about-grid {
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(101, 230, 209, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(101, 230, 209, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 80%,
+    transparent 100%
+  );
+}
+
+
+/* ---------------------------------------------------------
+   GLOW
+--------------------------------------------------------- */
+
+.about-glow {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  top: 15%;
+  right: -250px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  filter: blur(150px);
+
+  opacity: 0.035;
+}
+
+
+/* =========================================================
+   TOP LABEL
+========================================================= */
+
+.about-top-label {
+  position: absolute;
+
+  top: 65px;
+
+  left: 4.5%;
+  right: 4.5%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  font-family: var(--font-mono);
+
+  font-size: 10px;
+
+  letter-spacing: 0.18em;
+
+  color: var(--text-muted);
+}
+
+.about-top-label span:first-child {
+  color: var(--accent);
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.about-container {
+  width: min(var(--container), 90%);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(420px, 0.8fr);
+
+  gap: 110px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.about-intro {
+  padding-top: 25px;
+
+  max-width: 690px;
+}
+
+
+/* =========================================================
+   INDEX
+========================================================= */
+
+.about-index {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-bottom: 35px;
+
+  font-family: var(--font-mono);
+
+  font-size: 9px;
+
+  letter-spacing: 0.16em;
+
+  color: var(--text-muted);
+}
+
+.about-index span:first-child {
+  color: var(--accent);
+}
+
+.about-index span:last-child {
+  position: relative;
+
+  padding-left: 13px;
+}
+
+.about-index span:last-child::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 50%;
+
+  width: 5px;
+  height: 5px;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  background: var(--accent);
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.about-title {
+  margin: 0;
+
+  font-size: clamp(48px, 5vw, 72px);
+
+  line-height: 0.98;
+
+  letter-spacing: -0.06em;
+
+  font-weight: 500;
+}
+
+.about-title span {
+  color: transparent;
+
+  -webkit-text-stroke: 1px rgba(237, 247, 246, 0.4);
+
+  transition:
+    color 0.4s ease,
+    -webkit-text-stroke 0.4s ease;
+}
+
+.about-title:hover span {
+  color: var(--accent);
+
+  -webkit-text-stroke-color: var(--accent);
+}
+
+
+/* =========================================================
+   INTRO LINE
+========================================================= */
+
+.about-line {
+  width: 90px;
+
+  height: 1px;
+
+  margin: 45px 0 30px;
+
+  background: var(--accent);
+
+  box-shadow:
+    0 0 12px rgba(101, 230, 209, 0.3);
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.about-lead {
+  max-width: 620px;
+
+  margin: 0;
+
+  font-size: 18px;
+
+  line-height: 1.75;
+
+  color: var(--text-primary);
+}
+
+.about-lead strong {
+  color: var(--accent);
+
+  font-weight: 500;
+}
+
+.about-text {
+  max-width: 600px;
+
+  margin: 24px 0 0;
+
+  font-size: 14px;
+
+  line-height: 1.9;
+
+  color: var(--text-secondary);
+}
+
+
+/* =========================================================
+   RIGHT DATA AREA
+========================================================= */
+
+.about-data {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 24px;
+}
+
+
+/* =========================================================
+   PROFILE DATA CARD
+========================================================= */
+
+.about-data-card {
+  position: relative;
+
+  padding: 28px;
+
+  border: 1px solid var(--line);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(14, 28, 34, 0.92),
+      rgba(7, 16, 20, 0.7)
+    );
+
+  transition:
+    border-color 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.about-data-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: -1px;
+  left: 25px;
+
+  width: 50px;
+  height: 2px;
+
+  background: var(--accent);
+
+  box-shadow:
+    0 0 12px rgba(101, 230, 209, 0.35);
+}
+
+.about-data-card:hover {
+  border-color: var(--line-strong);
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.about-card-header {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.about-card-label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  font-family: var(--font-mono);
+
+  font-size: 8px;
+
+  letter-spacing: 0.15em;
+
+  color: var(--text-muted);
+}
+
+.about-card-header h3 {
+  margin: 0;
+
+  font-family: var(--font-main);
+
+  font-size: 20px;
+
+  font-weight: 600;
+
+  letter-spacing: -0.02em;
+}
+
+.about-card-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 6px 8px;
+
+  border: 1px solid rgba(101, 230, 209, 0.15);
+
+  font-family: var(--font-mono);
+
+  font-size: 7px;
+
+  letter-spacing: 0.12em;
+
+  color: var(--accent);
+
+  white-space: nowrap;
+}
+
+.about-card-status::before {
+  content: "";
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  box-shadow:
+    0 0 8px rgba(101, 230, 209, 0.6);
+}
+
+
+/* =========================================================
+   CARD DIVIDER
+========================================================= */
+
+.about-card-divider {
+  height: 1px;
+
+  margin: 25px 0 5px;
+
+  background: var(--line);
+}
+
+
+/* =========================================================
+   DATA ROWS
+========================================================= */
+
+.about-data-row {
+  display: grid;
+
+  grid-template-columns: 42% 58%;
+
+  align-items: center;
+
+  min-height: 47px;
+
+  border-bottom: 1px solid var(--line);
+
+  gap: 10px;
+}
+
+.about-data-row:last-child {
+  border-bottom: none;
+}
+
+.about-data-key {
+  font-family: var(--font-mono);
+
+  font-size: 8px;
+
+  letter-spacing: 0.13em;
+
+  color: var(--text-muted);
+}
+
+.about-data-value {
+  font-family: var(--font-mono);
+
+  font-size: 9px;
+
+  letter-spacing: 0.08em;
+
+  color: var(--text-secondary);
+
+  text-align: right;
+}
+
+.about-data-value.accent {
+  color: var(--accent);
+}
+
+
+/* =========================================================
+   ACADEMIC METRICS
+========================================================= */
+
+.about-metrics {
+  padding: 24px 26px;
+
+  border: 1px solid var(--line);
+
+  background: rgba(14, 28, 34, 0.48);
+}
+
+
+/* ---------------------------------------------------------
+   METRIC HEADING
+--------------------------------------------------------- */
+
+.about-metric-heading {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 22px;
+
+  font-family: var(--font-mono);
+
+  font-size: 8px;
+
+  letter-spacing: 0.14em;
+
+  color: var(--text-muted);
+}
+
+.about-metric-heading span:first-child {
+  color: var(--text-secondary);
+}
+
+.about-metric-heading span:last-child {
+  color: var(--accent);
+}
+
+
+/* ---------------------------------------------------------
+   METRIC GRID
+--------------------------------------------------------- */
+
+.about-metric-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 15px;
+}
+
+
+/* ---------------------------------------------------------
+   METRIC
+--------------------------------------------------------- */
+
+.about-metric {
+  min-width: 0;
+
+  padding-right: 15px;
+
+  border-right: 1px solid var(--line);
+}
+
+.about-metric:last-child {
+  border-right: none;
+
+  padding-right: 0;
+}
+
+.about-metric-number {
+  font-family: var(--font-mono);
+
+  font-size: clamp(22px, 2.3vw, 30px);
+
+  line-height: 1;
+
+  letter-spacing: -0.06em;
+
+  color: var(--accent);
+}
+
+.about-metric-label {
+  margin-top: 9px;
+
+  font-family: var(--font-mono);
+
+  font-size: 7px;
+
+  line-height: 1.6;
+
+  letter-spacing: 0.12em;
+
+  color: var(--text-muted);
+}
+
+
+/* =========================================================
+   METRIC BAR
+========================================================= */
+
+.about-metric-bar {
+  width: 100%;
+
+  height: 2px;
+
+  margin-top: 17px;
+
+  background: rgba(237, 247, 246, 0.06);
+
+  overflow: hidden;
+}
+
+.about-metric-bar span {
+  display: block;
+
+  height: 100%;
+
+  background: var(--accent);
+
+  box-shadow:
+    0 0 8px rgba(101, 230, 209, 0.45);
+
+  transform-origin: left;
+
+  animation: aboutMetricLoad 1.2s ease-out both;
+}
+
+.about-metric:nth-child(2) .about-metric-bar span {
+  animation-delay: 0.15s;
+}
+
+.about-metric:nth-child(3) .about-metric-bar span {
+  animation-delay: 0.3s;
+}
+
+@keyframes aboutMetricLoad {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+
+/* =========================================================
+   APPROACH
+========================================================= */
+
+.about-approach {
+  display: grid;
+
+  grid-template-columns: 48px 1fr;
+
+  gap: 20px;
+
+  padding: 25px;
+
+  border: 1px solid var(--line);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.about-approach::after {
+  content: "";
+
+  position: absolute;
+
+  width: 140px;
+  height: 140px;
+
+  right: -70px;
+  bottom: -70px;
+
+  border: 1px solid rgba(101, 230, 209, 0.08);
+
+  border-radius: 50%;
+}
+
+.about-approach-number {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--line-strong);
+
+  font-family: var(--font-mono);
+
+  font-size: 9px;
+
+  color: var(--accent);
+}
+
+.about-approach-label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  font-family: var(--font-mono);
+
+  font-size: 8px;
+
+  letter-spacing: 0.15em;
+
+  color: var(--text-muted);
+}
+
+.about-approach-content h3 {
+  margin: 0;
+
+  font-size: 17px;
+
+  font-weight: 500;
+
+  letter-spacing: -0.02em;
+
+  color: var(--text-primary);
+}
+
+.about-approach-content p {
+  margin: 12px 0 0;
+
+  font-size: 12px;
+
+  line-height: 1.75;
+
+  color: var(--text-secondary);
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.about-bottom {
+  width: min(var(--container), 90%);
+
+  margin: 90px auto 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  font-family: var(--font-mono);
+
+  font-size: 8px;
+
+  letter-spacing: 0.15em;
+
+  color: var(--text-muted);
+}
+
+.about-bottom span:last-child {
+  color: var(--accent);
+}
+
+.about-bottom-line {
+  width: 75px;
+
+  height: 1px;
+
+  background: var(--line);
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .about-container {
+    gap: 60px;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(370px, 0.8fr);
+  }
+
+  .about-title {
+    font-size: clamp(45px, 5vw, 62px);
+  }
+
+  .about-lead {
+    font-size: 16px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+  .about {
+    padding:
+      130px 0 90px;
+  }
+
+  .about-top-label {
+    top: 55px;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+
+    gap: 65px;
+  }
+
+  .about-intro {
+    max-width: 700px;
+  }
+
+  .about-data {
+    width: 100%;
+
+    max-width: 700px;
+  }
+
+  .about-title {
+    font-size: clamp(48px, 8vw, 70px);
+  }
+
+  .about-bottom {
+    margin-top: 70px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .about {
+    padding:
+      115px 0 75px;
+  }
+
+  .about-top-label {
+    top: 50px;
+
+    left: 5%;
+    right: 5%;
+
+    font-size: 8px;
+  }
+
+  .about-container {
+    width: 90%;
+
+    gap: 50px;
+  }
+
+  .about-intro {
+    padding-top: 10px;
+  }
+
+  .about-index {
+    margin-bottom: 27px;
+
+    font-size: 8px;
+  }
+
+  .about-title {
+    font-size: clamp(40px, 11vw, 58px);
+
+    line-height: 1;
+  }
+
+  .about-line {
+    margin: 35px 0 25px;
+
+    width: 65px;
+  }
+
+  .about-lead {
+    font-size: 15px;
+
+    line-height: 1.75;
+  }
+
+  .about-text {
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    margin-top: 19px;
+  }
+
+  .about-data {
+    gap: 18px;
+  }
+
+  .about-data-card {
+    padding: 21px;
+  }
+
+  .about-card-header h3 {
+    font-size: 17px;
+  }
+
+  .about-card-status {
+    font-size: 6px;
+
+    padding: 5px 6px;
+  }
+
+  .about-data-row {
+    grid-template-columns: 43% 57%;
+
+    min-height: 43px;
+  }
+
+  .about-data-key {
+    font-size: 7px;
+  }
+
+  .about-data-value {
+    font-size: 7px;
+  }
+
+  .about-metrics {
+    padding: 20px;
+  }
+
+  .about-metric-grid {
+    gap: 8px;
+  }
+
+  .about-metric {
+    padding-right: 8px;
+  }
+
+  .about-metric-number {
+    font-size: 20px;
+  }
+
+  .about-metric-label {
+    font-size: 6px;
+  }
+
+  .about-metric-bar {
+    margin-top: 13px;
+  }
+
+  .about-approach {
+    grid-template-columns: 38px 1fr;
+
+    gap: 14px;
+
+    padding: 20px;
+  }
+
+  .about-approach-number {
+    width: 32px;
+    height: 32px;
+
+    font-size: 8px;
+  }
+
+  .about-approach-content h3 {
+    font-size: 15px;
+  }
+
+  .about-approach-content p {
+    font-size: 11px;
+  }
+
+  .about-bottom {
+    width: 90%;
+
+    margin-top: 55px;
+
+    font-size: 7px;
+  }
+
+  .about-bottom-line {
+    width: 45px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .about {
+    padding-top: 105px;
+  }
+
+  .about-top-label {
+    top: 45px;
+
+    font-size: 7px;
+  }
+
+  .about-title {
+    font-size: clamp(37px, 11vw, 50px);
+  }
+
+  .about-lead {
+    font-size: 14px;
+  }
+
+  .about-text {
+    font-size: 12px;
+  }
+
+  .about-card-header {
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  .about-card-status {
+    align-self: flex-start;
+  }
+
+  .about-data-row {
+    grid-template-columns: 45% 55%;
+  }
+
+  .about-data-value {
+    font-size: 6.5px;
+  }
+
+  .about-metric-number {
+    font-size: 17px;
+  }
+
+  .about-metric-label {
+    font-size: 5.5px;
+  }
+
+  .about-approach {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-metric-bar span {
+    animation: none;
+  }
+
+  .about-title span,
+  .about-data-card {
+    transition: none;
+  }
+}
