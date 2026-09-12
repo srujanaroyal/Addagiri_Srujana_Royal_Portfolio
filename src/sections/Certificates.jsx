@@ -7,7 +7,7 @@ const certificates = [
     title: "Introduction to Cybersecurity",
     issuer: "Cisco Networking Academy",
     category: "CYBERSECURITY",
-    image: "/public/certificates/Introduction to Cybersecurity Certificate.png",
+    image: "/certificates/Introduction to Cybersecurity Certificate.png",
     description:
       "Foundational knowledge of cybersecurity, threats, vulnerabilities, and safe digital practices.",
     tags: ["Cybersecurity", "Threats", "Security"],
@@ -17,7 +17,7 @@ const certificates = [
     title: "Python Essentials 1",
     issuer: "Cisco Networking Academy",
     category: "PYTHON",
-    image: "/public/certificates/Python Essentials_1 Certificate.png",
+    image: "/certificates/Python Essentials_1 Certificate.png",
     description:
       "Core Python programming concepts including syntax, variables, control structures, and functions.",
     tags: ["Python", "Programming", "Fundamentals"],
@@ -27,7 +27,7 @@ const certificates = [
     title: "Python Essentials 2",
     issuer: "Cisco Networking Academy",
     category: "PYTHON",
-    image: "/public/certificates/Python Essential_2 Certificate.png",
+    image: "/certificates/Python Essential_2 Certificate.png",
     description:
       "Advanced Python concepts including object-oriented programming, modules, exceptions, and file handling.",
     tags: ["Python", "OOP", "File Handling"],
@@ -37,7 +37,7 @@ const certificates = [
     title: "CCNA: Introduction to Networks",
     issuer: "Cisco Networking Academy",
     category: "NETWORKING",
-    image: "/public/certificates/CCNA- Introduction to Networks Certificate.png",
+    image: "/certificates/CCNA- Introduction to Networks Certificate.png",
     description:
       "Networking fundamentals covering IP addressing, network concepts, and basic network configuration.",
     tags: ["Networking", "IP", "CCNA"],
@@ -47,7 +47,7 @@ const certificates = [
     title: "R Programming Comprehensive Bundle",
     issuer: "Infosys Springboard",
     category: "DATA SCIENCE",
-    image: "/public/certificates/R Programming Comprehensive Bundle.png",
+    image: "/certificates/R Programming Comprehensive Bundle.png",
     description:
       "R programming fundamentals with exploratory data analysis, statistical analysis, and data visualization.",
     tags: ["R", "EDA", "Visualization"],
