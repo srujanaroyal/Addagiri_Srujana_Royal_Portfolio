@@ -175,57 +175,6 @@ function Hero() {
 
           </div>
 
-
-          {/* Academic Signature */}
-
-          {/* <div className="hero-signature">
-
-            <div className="hero-signature-item">
-
-              <span className="signature-number">
-                9.53
-              </span>
-
-              <span className="signature-label">
-                ENGINEERING CGPA
-              </span>
-
-            </div>
-
-
-            <div className="hero-signature-line"></div>
-
-
-            <div className="hero-signature-item">
-
-              <span className="signature-number">
-                96.67%
-              </span>
-
-              <span className="signature-label">
-                PUC
-              </span>
-
-            </div>
-
-
-            <div className="hero-signature-line"></div>
-
-
-            <div className="hero-signature-item">
-
-              <span className="signature-number">
-                10.0
-              </span>
-
-              <span className="signature-label">
-                SSC GPA
-              </span>
-
-            </div>
-
-          </div> */}
-
         </div>
 
 
