@@ -149,7 +149,7 @@ function Hero() {
           <div className="hero-actions">
 
             <a
-              href="#projects"
+              href="#work"
               className="hero-button hero-button-primary"
             >
               <span>Explore My Work</span>

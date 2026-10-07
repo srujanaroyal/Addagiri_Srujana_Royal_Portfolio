@@ -23,8 +23,8 @@ function Navbar() {
     {
       number: "03",
       name: "Work",
-      href: "#projects",
-      id: "projects",
+      href: "#work",
+      id: "work",
     },
     {
       number: "04",
