@@ -1,25 +1,35 @@
 :root {
+
   /* =========================================
      COLORS
   ========================================= */
 
   --bg-main: #071014;
+
   --bg-secondary: #0b171c;
+
   --bg-card: #0e1c22;
+
   --bg-elevated: #12242b;
 
   --text-primary: #edf7f6;
+
   --text-secondary: #9aafaf;
+
   --text-muted: #617474;
 
   --accent: #65e6d1;
+
   --accent-soft: #a1f2e4;
+
   --accent-dark: #2ba895;
 
   --line: rgba(237, 247, 246, 0.09);
+
   --line-strong: rgba(101, 230, 209, 0.22);
 
   --white: #ffffff;
+
   --black: #000000;
 
 
@@ -44,12 +54,21 @@
      SPACING
   ========================================= */
 
-  --container: 1240px;
+  /*
+     Compact portfolio scale
+     Previously:
+     --container: 1240px;
+     --section-padding: 150px;
+  */
 
-  --section-padding: 150px;
+  --container: 1180px;
+
+  --section-padding: 100px;
 
   --radius-small: 4px;
+
   --radius-medium: 10px;
+
   --radius-large: 18px;
 
 
@@ -58,6 +77,10 @@
   ========================================= */
 
   --transition-fast: 0.2s ease;
+
   --transition-medium: 0.35s ease;
-  --transition-slow: 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+
+  --transition-slow:
+    0.7s cubic-bezier(0.22, 1, 0.36, 1);
+
 }
