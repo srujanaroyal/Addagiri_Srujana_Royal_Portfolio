@@ -5,6 +5,7 @@ const projects = [
     id: "01",
     category: "DATA ANALYSIS",
     title: "Library Management Data Analysis Using R",
+
     description:
       "Analyzed and visualized library management data to understand book availability, borrowing patterns, overdue returns, branch performance, and book popularity.",
 
@@ -26,8 +27,13 @@ const projects = [
     status: "COMPLETED",
     year: "2026",
 
-    // github: "#",
-    // demo: "#",
+    github:
+      "https://github.com/srujanaroyal/Library_Management_using_R",
+
+    // Add your deployed website/dashboard URL here
+    demo: "https://librarymanagementusingr-kqpfyujpzrg4kgu3ezx4o7.streamlit.app/",
+
+    image: "/images/projects/library-analysis.png",
 
     featured: true,
   },
@@ -36,6 +42,7 @@ const projects = [
     id: "02",
     category: "DATA VISUALIZATION",
     title: "COVID-19 Impact Analysis Dashboard",
+
     description:
       "Developed an interactive Tableau dashboard to analyze global COVID-19 confirmed cases, deaths, recoveries, regional trends, hotspots, and recovery patterns.",
 
@@ -57,16 +64,21 @@ const projects = [
     status: "COMPLETED",
     year: "2026",
 
-    // github: "#",
-    // demo: "#",
+    github:
+      "https://github.com/srujanaroyal/Covid-19_Impact_Analysis_Dashboard",
+
+    demo: "",
+
+    image: "/images/projects/covid-dashboard.png",
 
     featured: false,
   },
 
   {
     id: "03",
-    category: "FinTech / AI & Machine Learning",
+    category: "FINTECH / AI & MACHINE LEARNING",
     title: "AI-Powered Financial System",
+
     description:
       "Developed an AI-powered full-stack financial platform that integrates loan risk prediction, land collateral assessment, expense tracking, investment planning, credit score simulation, loan repayment, and net worth management into a unified dashboard.",
 
@@ -97,8 +109,13 @@ const projects = [
     status: "BUILDING",
     year: "2026",
 
-    // github: "#",
-    // demo: "#",
+    github:
+      "https://github.com/srujanaroyal/smart-financial-management-system",
+
+    // Add your deployed website URL here
+    demo: "https://finrisk-app.vercel.app/live",
+
+    image: "/images/projects/financial-system.png",
 
     featured: false,
   },
@@ -106,12 +123,15 @@ const projects = [
 
 function Projects() {
   return (
-    <section className="projects" id="projects">
+    <section className="projects" id="work">
       <div className="projects-grid-background" />
 
       <div className="projects-container">
 
-        {/* HEADER */}
+        {/* =========================================
+            HEADER
+        ========================================= */}
+
         <div className="projects-header">
 
           <div className="section-index">
@@ -129,7 +149,10 @@ function Projects() {
         </div>
 
 
-        {/* INTRO */}
+        {/* =========================================
+            INTRO
+        ========================================= */}
+
         <div className="projects-intro">
 
           <div className="projects-intro-label">
@@ -150,18 +173,23 @@ function Projects() {
         </div>
 
 
-        {/* PROJECT LIST */}
+        {/* =========================================
+            PROJECT LIST
+        ========================================= */}
+
         <div className="projects-list">
 
           {projects.map((project) => (
             <article
-              className={`project-card ${
-                project.featured ? "project-featured" : ""
-              }`}
+              className={`project-card ${project.featured ? "project-featured" : ""
+                }`}
               key={project.id}
             >
 
-              {/* PROJECT TOP */}
+              {/* =====================================
+                  PROJECT TOP
+              ===================================== */}
+
               <div className="project-top">
 
                 <div className="project-number">
@@ -179,10 +207,14 @@ function Projects() {
               </div>
 
 
-              {/* PROJECT BODY */}
+              {/* =====================================
+                  PROJECT BODY
+              ===================================== */}
+
               <div className="project-content">
 
                 {/* LEFT */}
+
                 <div className="project-main">
 
                   <div className="project-title-row">
@@ -203,6 +235,7 @@ function Projects() {
 
 
                   {/* STACK */}
+
                   <div className="project-stack">
 
                     {project.stack.map((technology) => (
@@ -219,37 +252,85 @@ function Projects() {
                 </div>
 
 
-                {/* RIGHT */}
-                <div className="project-visual">
+                {/* RIGHT - PROJECT IMAGE */}
 
-                  <div className="visual-grid" />
+                <div className="project-visual-wrapper">
 
-                  <div className="visual-orbit orbit-one" />
-                  <div className="visual-orbit orbit-two" />
-                  <div className="visual-orbit orbit-three" />
+                  {project.demo || project.github ? (
+                    <a
+                      href={project.demo || project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-visual"
+                      aria-label={`Open ${project.title}`}
+                    >
 
-                  <div className="visual-core">
-                    <span>{project.id}</span>
-                  </div>
+                      <img
+                        src={project.image}
+                        alt={`${project.title} project preview`}
+                        className="project-image"
+                      />
 
-                  <div className="visual-node node-one" />
-                  <div className="visual-node node-two" />
-                  <div className="visual-node node-three" />
+                      <div className="project-image-overlay">
 
-                  <span className="visual-label label-top">
-                    PROJECT
-                  </span>
+                        <span className="image-index">
+                          PROJECT_{project.id}
+                        </span>
 
-                  <span className="visual-label label-bottom">
-                    {project.category}
-                  </span>
+                        <span className="image-category">
+                          {project.category}
+                        </span>
+
+                        <span className="image-open">
+                          OPEN ↗
+                        </span>
+
+                      </div>
+
+                      <div className="image-corner image-corner-tl" />
+                      <div className="image-corner image-corner-tr" />
+                      <div className="image-corner image-corner-bl" />
+                      <div className="image-corner image-corner-br" />
+
+                    </a>
+                  ) : (
+                    <div className="project-visual">
+
+                      <img
+                        src={project.image}
+                        alt={`${project.title} project preview`}
+                        className="project-image"
+                      />
+
+                      <div className="project-image-overlay">
+
+                        <span className="image-index">
+                          PROJECT_{project.id}
+                        </span>
+
+                        <span className="image-category">
+                          {project.category}
+                        </span>
+
+                      </div>
+
+                      <div className="image-corner image-corner-tl" />
+                      <div className="image-corner image-corner-tr" />
+                      <div className="image-corner image-corner-bl" />
+                      <div className="image-corner image-corner-br" />
+
+                    </div>
+                  )}
 
                 </div>
 
               </div>
 
 
-              {/* PROJECT DETAILS */}
+              {/* =====================================
+                  PROJECT DETAILS
+              ===================================== */}
+
               <div className="project-details">
 
                 <div className="project-detail">
@@ -285,8 +366,16 @@ function Projects() {
                   </span>
 
                   <span className="status-value">
-                    <span className="status-indicator" />
+
+                    <span
+                      className={`status-indicator ${project.status === "BUILDING"
+                          ? "status-building"
+                          : ""
+                        }`}
+                    />
+
                     {project.status}
+
                   </span>
 
                 </div>
@@ -294,32 +383,53 @@ function Projects() {
               </div>
 
 
-              {/* FOOTER */}
+              {/* =====================================
+                  PROJECT FOOTER
+              ===================================== */}
+
               <div className="project-footer">
 
                 <div className="project-index">
                   PROJECT_{project.id}
                 </div>
 
+
                 <div className="project-links">
 
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    GITHUB
-                    <span>↗</span>
-                  </a>
+                  {/* GITHUB */}
 
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    LIVE DEMO
-                    <span>↗</span>
-                  </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link github-link"
+                      aria-label={`View ${project.title} on GitHub`}
+                    >
+                      <span className="github-symbol">◉</span>
+
+                      <span>GITHUB</span>
+
+                      <span className="link-arrow">↗</span>
+                    </a>
+                  )}
+
+
+                  {/* LIVE WEBSITE */}
+
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link website-link"
+                      aria-label={`Open ${project.title} website`}
+                    >
+                      <span>LIVE WEBSITE</span>
+
+                      <span className="link-arrow">↗</span>
+                    </a>
+                  )}
 
                 </div>
 
@@ -331,7 +441,10 @@ function Projects() {
         </div>
 
 
-        {/* BOTTOM */}
+        {/* =========================================
+            BOTTOM
+        ========================================= */}
+
         <div className="projects-bottom">
 
           <span>

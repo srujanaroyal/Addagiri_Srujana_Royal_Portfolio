@@ -3,7 +3,7 @@ import "./Achievements.css";
 const achievements = [
   {
     number: "01",
-    value: "9.53",
+    value: "9.54",
     unit: "CGPA",
     title: "Engineering",
     subtitle: "B.Tech — Computer Science & Engineering",

@@ -26,7 +26,7 @@ const educationData = [
     period: "2023 — 2027",
     level: "UNDERGRADUATE",
     institution: "B.TECH — COMPUTER SCIENCE",
-    result: "9.53 CGPA",
+    result: "9.54 CGPA",
     description:
       "Currently pursuing Computer Science with a specialization in Data Science and exploring technology through projects and continuous learning.",
     status: "IN PROGRESS",
